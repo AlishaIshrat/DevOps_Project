@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DevOps Interactive App</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 15px 0;
+      min-height: 40px;
+      transition: all 0.3s ease;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #ff4d6d;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ffd6dd;
+      transform: scale(1.05);
+    }
+
+    .dark-mode {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #eee;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    #clock {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💻 DevOps Interactive Web App</h1>
+    <p id="message">Click a button to explore functionality!</p>
+    
+    <button class="btn" onclick="showRandomMessage()">Show Random Fact</button>
+    <button class="btn" onclick="toggleMode()">Toggle Light/Dark Mode</button>
+    
+    <p id="clock">Time: --:--:--</p>
+  </div>
+
+  <footer>🚀 Made with ❤️ for DevOps Project</footer>
+
+  <script>
+    const messages = [
+      "Did you know? Docker was released in 2013 🐳",
+      "CI/CD automates the boring stuff! ⚙️",
+      "Railway is a great cloud platform ☁️",
+      "Minikube simulates Kubernetes locally 🚢",
+      "React is for building UIs, not just Native 📱"
+    ];
+
+    function showRandomMessage() {
+      const random = Math.floor(Math.random() * messages.length);
+      document.getElementById("message").innerText = messages[random];
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById("clock").innerText = "Time: " + time;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock(); // init call
+  </script>
+</body>
+</html>
