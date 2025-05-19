@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('devops-web-app')
+                    bat 'docker build -t devops-webapp .'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh 'docker run -d -p 80:80 --name devops-app devops-web-app || echo "Container may already be running."'
+                    bat 'docker run -d -p 80:80 devops-webapp'
                 }
             }
         }
