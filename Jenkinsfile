@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    bat 'docker build -t devops-webapp .'
+                    bat 'docker build -t 40851/my-web-app .'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    bat 'docker run -d -p 80:80 devops-webapp'
+                    bat 'docker run -d -p 8081:80 40851/my-web-app'
                 }
             }
         }
