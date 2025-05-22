@@ -117,4 +117,9 @@ ________________________________________
 •	Yes, Kubernetes runs inside Minikube. Minikube creates a local Kubernetes cluster using a VM or container.
 •	You do not need to reinstall or reapply YAML unless the pod was deleted or the VM was reset.
 
+The cloud infrastructue I used is vercel and you can acess my website here
+```javascript
+https://dev-ops-project-two.vercel.app/
+```
+
 # DevOps_Project
