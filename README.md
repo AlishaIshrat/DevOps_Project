@@ -90,16 +90,16 @@ To reopen and resume working with Minikube and Kubernetes, follow these steps af
 ________________________________________
 ✅ 1. Start Minikube
 Open your terminal and run:
-bash
-CopyEdit
+```javascript
 minikube start
+```
 This will start your Minikube cluster and all the Kubernetes components inside it (like the API server, controller, scheduler, etc.).
 ________________________________________
 ✅ 2. Check Status
-Verify everything is up and running:
-bash
-CopyEdit
+Verify everything is up and running, run the command:
+```javascript
 kubectl get pods
+```
 If your pod is running, you’ll see something like:
 sql
 CopyEdit
@@ -107,10 +107,11 @@ NAME     READY   STATUS    RESTARTS   AGE
 webapp   1/1     Running   0          1h
 ________________________________________
 ✅ 3. Access the App (if needed)
-To get the URL for your service:
-bash
-CopyEdit
+To get the URL for your service, run the command:
+```javascript
 minikube service webapp-service
+```
+Here webapp-servics is the name. 
 It will open the app in your browser or give you a link.
 ________________________________________
 ✅ Notes:
